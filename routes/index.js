@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const { storeShortenedUrl, fetchRecordById, fetchRecordByShortUrl } = require('../db/queries');
 const { prepareDatabaseEntry, generateShortUrl } = require('../tools/helpers');
-
+console.log('ENV:',process.env);
 router.post('/shorten', (req, res) => {
     const { url_to_shorten } = req.body;
     const generatedData = prepareDatabaseEntry(url_to_shorten);
