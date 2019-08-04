@@ -42,10 +42,10 @@ router.get('/urls/:id', (req, res) => {
 router.get('/:id', (req, res) => {
     const { id } = req.params;
     const shortUrl = generateShortUrl(id);
-
+  console.log( ' i am here ');
     fetchRecordByShortUrl(shortUrl)
     .then(record => {
-        res.redirect(record.rows[0].originalurl);
+        res.status(301).redirect(record.rows[0].originalurl);
     })
     .catch(err => res.status(400).send(err));
 
