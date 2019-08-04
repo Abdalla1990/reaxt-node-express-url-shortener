@@ -1,7 +1,7 @@
 
-dev = {
+const dev = {
     user : 'abdalla',
-    db_name : 'urls',
+    database : 'urls',
     password: '12345678',
     host: 'urls.cbs6yy5r1pr3.us-east-2.rds.amazonaws.com',
     port: '5432',
