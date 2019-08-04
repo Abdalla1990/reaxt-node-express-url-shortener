@@ -1,10 +1,10 @@
 
 dev = {
-    user : process.env.RDS_USERNAME || 'abdalla',
-    db_name : process.env.RDS_DB_NAME || 'urls',
-    password: process.env.RDS_PASSWORD || '123456',
-    host: process.env.RDS_HOSTNAME || 'localhost',
-    port: process.env.RDS_PORT || '5432',
+    user : 'abdalla',
+    db_name : 'urls',
+    password: '12345678',
+    host: 'urls.cbs6yy5r1pr3.us-east-2.rds.amazonaws.com',
+    port: '5432',
 }
 
 module.exports = {
