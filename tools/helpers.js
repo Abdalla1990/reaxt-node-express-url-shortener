@@ -9,7 +9,7 @@ const prepareDatabaseEntry = original => {
     original
 })}
 
-const generateShortUrl = id => `https://elasticbeanstalk-us-east-2-296990967656.s3.us-east-2.amazonaws.com/${id}`
+const generateShortUrl = id => `http://node-express-urls-shortener.v33mdsbcyb.us-east-2.elasticbeanstalk.com/${id}`
 
 const isValidUrl = url => {
     console.log('Validation : ', url);
