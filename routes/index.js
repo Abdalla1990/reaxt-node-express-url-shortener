@@ -25,7 +25,7 @@ router.post('/shorten', (req, res) => {
 
 router.get('/urls/:id', (req, res) => {
     const { id } = req.params;
-
+  console.log(' I want to test this ', __dirname + id);
     fetchRecordById(id)
     .then(record => {
         // console.log( record.rows);
