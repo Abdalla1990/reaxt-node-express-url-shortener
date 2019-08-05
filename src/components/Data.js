@@ -2,7 +2,6 @@ import React from 'react';
 
 const Data = props => (
   <div className='data-container'>
-      {console.log({ props})}
     Url details
     {!props.error && 
         <React.Fragment>
