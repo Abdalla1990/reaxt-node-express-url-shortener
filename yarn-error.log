@@ -1,0 +1,69 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add node-sass --save
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/aahmed.cg.ide/.ebcli-virtual-env/executables
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  10.15.3
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: EACCES: permission denied, mkdir '/Users/AAhmed.cg.ide/Documents/express-test/node_modules/aproba'
+
+npm manifest: 
+  {
+    "name": "express-test",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+      "start": "node ./bin/www",
+      "build:dev": "webpack",
+      "nodemon": "webpack && nodemon ./bin/www"
+    },
+    "dependencies": {
+      "axios": "^0.17.1",
+      "babel-cli": "6.24.1",
+      "babel-core": "^6.26.3",
+      "babel-loader": "^7.1.5",
+      "babel-plugin-file-loader": "^1.1.1",
+      "babel-plugin-transform-class-properties": "6.24.1",
+      "babel-plugin-transform-object-rest-spread": "^6.26.0",
+      "babel-polyfill": "^6.26.0",
+      "babel-preset-env": "1.5.2",
+      "babel-preset-es2015": "^6.24.1",
+      "babel-preset-react": "6.24.1",
+      "babel-preset-stage-0": "^6.24.1",
+      "body-parser": "^1.18.3",
+      "cookie-parser": "~1.4.4",
+      "css-loader": "0.28.4",
+      "debug": "~2.6.9",
+      "express": "~4.16.1",
+      "html-loader": "^0.5.5",
+      "http-errors": "~1.6.3",
+      "jade": "~1.11.0",
+      "morgan": "~1.9.1",
+      "node-sass": "4.5.3",
+      "nodemon": "^1.19.1",
+      "normalize.css": "^7.0.0",
+      "pg": "^7.12.0",
+      "react": "^16.8.6",
+      "react-dom": "^16.8.6",
+      "sass-loader": "6.0.6",
+      "style-loader": "0.18.2",
+      "uuid": "^3.3.2",
+      "webpack": "^3.12.0",
+      "webpack-dev-server": "2.5.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

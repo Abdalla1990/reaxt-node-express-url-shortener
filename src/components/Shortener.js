@@ -25,8 +25,9 @@ const Shoretenr = () => {
  }
 
   return (
-  <div>
-    Shortener
+  <div className="shortener-container">
+    <h2>Shortener</h2>
+    <p> Enter a valid url to shorten it </p>
     <input ref={ref} onChange={handleUrlChange}/>
     <button disabled={!isValid} onClick={handleUrlButtonClick}>CLick Me</button>
     { data && <Data {...data} />}
