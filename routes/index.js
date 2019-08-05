@@ -18,16 +18,19 @@ router.post('/shorten', (req, res) => {
 
   const generatedData = prepareDatabaseEntry(url);
   storeShortenedUrl(generatedData).then(data => {
+    
     if(data.rowCount > 0) {
-        fetchRecordById(generatedData.uuid)
-        .then(record => {
-          return res.status(200).send(record.rows);
-        })
-        .catch(err => res.status(400).send(err));
+      fetchRecordById(generatedData.uuid)
+      .then(record => {
+        return res.status(200).send(record.rows);
+      })
+      .catch(err => res.status(400).send(err));
     }else {
-        res.status(400).send({error: 'either data already exists or something went wrong'})
+      res.status(400).send({error: 'either data already exists or something went wrong'});
     }
+
   }).catch(e => res.status(400).send({error: e.detail}));  
+
 });
 
 router.get('/urls/:id', (req, res) => {
@@ -52,7 +55,7 @@ router.get('/:id', (req, res) => {
 
 });
 
-/* GET home page. */
+
 router.get('/*', (req, res) => {
   res.sendFile(publicPath + '/index.html');
 });
