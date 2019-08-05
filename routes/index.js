@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
+const path = require('path');
 const { storeShortenedUrl, fetchRecordById, fetchRecordByShortUrl } = require('../db/queries');
 const { prepareDatabaseEntry, generateShortUrl, isValidUrl } = require('../tools/helpers');
+const publicPath = path.join(__dirname, '..', 'public');
 
-console.log('ENV : ' , process.env);
+// console.log('ENV : ' , process.env);
 router.post('/shorten', (req, res) => {
     const { url_to_shorten } = req.body;
     if(isValidUrl(url_to_shorten)) {
@@ -42,10 +44,17 @@ router.get('/urls/:id', (req, res) => {
 router.get('/:id', (req, res) => {
     const { id } = req.params;
     const shortUrl = generateShortUrl(id);
-  console.log( ' i am here ');
     fetchRecordByShortUrl(shortUrl)
     .then(record => {
-        res.status(301).redirect(record.rows[0].originalurl);
+      let url;
+      const hasHttp = !!record.rows[0].originalurl.indexOf('http') > -1 ;
+      console.log(hasHttp)
+      if (!hasHttp) {
+        url = 'http://' + record.rows[0].originalurl;
+      } else {
+        url = record.rows[0].originalurl;
+      }
+        res.status(301).redirect(url);
     })
     .catch(err => res.status(400).send(err));
 
@@ -53,7 +62,7 @@ router.get('/:id', (req, res) => {
 
 /* GET home page. */
 router.get('/*', (req, res) => {
-  res.send({ hello: 'world'})
+  res.sendFile(publicPath + '/index.html');
 });
 
 module.exports = router;
