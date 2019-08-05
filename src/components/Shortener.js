@@ -15,6 +15,8 @@ const Shoretenr = () => {
     shortenUrl(ref.current.value).then( (res) => {
       console.log('value', res.data[0]);
       setData(res.data[0])
+    }).catch(res => {
+      setData({error: res.response.data.error})
     })
  }
 
