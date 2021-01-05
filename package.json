@@ -8,7 +8,7 @@
     "nodemon": "webpack && nodemon ./bin/www"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.21.1",
     "babel-cli": "6.24.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
